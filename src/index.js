@@ -1,16 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import reportWebVitals from './reportWebVitals';
+
+import App from './app/App';
+
 import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
-import reportWebVitals from './reportWebVitals';
-import BadgeNew from './pages/badgeNew/BadgeNew';
-import Badges from './pages/badges/Badges';
-
-
 
 ReactDOM.render(
   <React.StrictMode>
-    <Badges />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
