@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
+import BadgeNew from './pages/badgeNew/BadgeNew';
 
-import BadgeNew from './pages/BadgeNew';
 
 
 ReactDOM.render(

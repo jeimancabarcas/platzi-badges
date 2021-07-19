@@ -1,7 +1,7 @@
 import React from 'react';
 
-import './styles/Navbar.css';
-import logo from '../../assets/images/logo.svg';
+import './Navbar.css';
+import logo from '../../../assets/images/logo.svg';
 
 class Navbar extends React.Component {
   render() {
