@@ -1,6 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
 @import url('https://fonts.googleapis.com/css?family=Anton');
 
+.BadgeNew__hero {
+  width: 100%;
+  padding: 2rem 0;
+  background: url('./assets/images/stars.svg'), #1B1B25;
+  background-repeat: repeat;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
 
 * {
   -webkit-font-smoothing: antialiased;

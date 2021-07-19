@@ -1,6 +1,8 @@
 import React from 'react';
-import confLogo from '../assets/images/badge-header.svg';
-import Navbar from '../components/shared/Navbar';
+import confLogo from '../../assets/images/badge-header.svg';
+import BadgesList from '../../components/badgesList/BadgesList';
+import Navbar from '../../components/shared/navbar/Navbar';
+import './Badges.css';
 
 class Badges extends React.Component {
     state = {

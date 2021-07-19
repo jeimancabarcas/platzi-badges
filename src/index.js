@@ -4,12 +4,13 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import BadgeNew from './pages/badgeNew/BadgeNew';
+import Badges from './pages/badges/Badges';
 
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <BadgeNew />
+    <Badges />
   </React.StrictMode>,
   document.getElementById('root')
 );
