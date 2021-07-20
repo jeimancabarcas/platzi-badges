@@ -30,7 +30,7 @@ class BadgeNew extends React.Component {
   handleSubmit = async e => {
     e.preventDefault();
     try {
-      await api.badges.create(this.state.form);
+      await api.badges.create({...this.state.form, avatarUrl: `https://www.gravatar.com/avatar/${md5(this.state.form.email)}?d=identicon`});
       this.props.history.push('/badges')
     } catch (error) {
       this.setState({error: error})
@@ -48,11 +48,11 @@ class BadgeNew extends React.Component {
             <div className="row">
               <div className="col-6">
                 <Badge
-                  firstName={this.state.form.firstName || 'FIRST NAME'}
-                  lastName={this.state.form.lastName || 'LASTNAME'}
-                  twitter={this.state.form.twitter || 'username'}
-                  jobTitle={this.state.form.jobTitle || 'JOB TITLE'}
-                  avatarUrl={`https://www.gravatar.com/avatar/${md5(this.state.form.email)}`}
+                  firstName = {this.state.form.firstName || 'FIRST NAME'}
+                  lastName = {this.state.form.lastName || 'LASTNAME'}
+                  twitter = {this.state.form.twitter || 'username'}
+                  jobTitle = {this.state.form.jobTitle || 'JOB TITLE'}
+                  avatarUrl = {`https://www.gravatar.com/avatar/${md5(this.state.form.email)}?d=identicon`}
                 />
               </div>
               <div className="col-6">
