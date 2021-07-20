@@ -5,6 +5,7 @@ import header from '../../assets/images/badge-header.svg';
 import BadgeForm from '../../components/badgeForm/BadgeForm';
 import Badge from '../../components/badge/Badge';
 import api from '../../api';
+import md5 from 'md5';
 
 class BadgeNew extends React.Component {
     state = {
@@ -51,6 +52,7 @@ class BadgeNew extends React.Component {
                   lastName={this.state.form.lastName || 'LASTNAME'}
                   twitter={this.state.form.twitter || 'username'}
                   jobTitle={this.state.form.jobTitle || 'JOB TITLE'}
+                  avatarUrl={`https://www.gravatar.com/avatar/${md5(this.state.form.email)}`}
                 />
               </div>
               <div className="col-6">
