@@ -4,20 +4,38 @@ import header from '../../assets/images/badge-header.svg';
 
 import BadgeForm from '../../components/badgeForm/BadgeForm';
 import Badge from '../../components/badge/Badge';
+import api from '../../api';
 
 class BadgeNew extends React.Component {
     state = {
-        form: {}
+        form: {
+          firstName: '',
+          lastName: '',
+          email: '',
+          jobTitle: '',
+          twitter: '',
+        }
     }
 
-    handleChanges = e => {
-        this.setState({
-            form: {
-                ...this.state.form,
-                [e.target.name] : e.target.value
-            }
-        })
+  handleChanges = e => {
+    this.setState({
+        form: {
+            ...this.state.form,
+            [e.target.name] : e.target.value
+        }
+    })
+  };
+
+  handleSubmit = async e => {
+    e.preventDefault();
+    try {
+      await api.badges.create(this.state.form);
+      this.props.history.push('/badges')
+    } catch (error) {
+      this.setState({error: error})
     }
+  };
+
     render() {
       return (
         <div>
@@ -29,15 +47,16 @@ class BadgeNew extends React.Component {
             <div className="row">
               <div className="col-6">
                 <Badge
-                  firstName={this.state.form.firstName}
-                  lastName={this.state.form.lastName}
-                  twitter={this.state.form.twitter}
-                  jobTitle={this.state.form.jobTitle}
+                  firstName={this.state.form.firstName || 'FIRST NAME'}
+                  lastName={this.state.form.lastName || 'LASTNAME'}
+                  twitter={this.state.form.twitter || 'username'}
+                  jobTitle={this.state.form.jobTitle || 'JOB TITLE'}
                 />
               </div>
               <div className="col-6">
                   <BadgeForm 
                     onChange={this.handleChanges}
+                    onSubmit={this.handleSubmit}
                     formValues={this.state.form}
                    />
               </div>

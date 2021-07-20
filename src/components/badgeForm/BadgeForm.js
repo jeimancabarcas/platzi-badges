@@ -1,22 +1,11 @@
 import React from 'react';
 
 class BadgeForm extends React.Component {
-  
-    handleClick = e => {
-      console.log('Button was clicked');
-    };
-  
-    handleSubmit = e => {
-      e.preventDefault();
-      console.log('Form was submitted');
-      console.log(this.state);
-    };
-
   render() {
     return (<div>
         <h1>New Attendant</h1>
 
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.props.onSubmit}>
           <div className="mb-3">
             <label>First Name</label>
             <input
@@ -24,7 +13,7 @@ class BadgeForm extends React.Component {
               className="form-control"
               type="text"
               name="firstName"
-              value={this.props.firstName}
+              value={this.props.formValues.firstName}
             />
           </div>
 
@@ -35,7 +24,7 @@ class BadgeForm extends React.Component {
               className="form-control"
               type="text"
               name="lastName"
-              value={this.props.lastName}
+              value={this.props.formValues.lastName}
             />
           </div>
 
@@ -46,7 +35,7 @@ class BadgeForm extends React.Component {
               className="form-control"
               type="email"
               name="email"
-              value={this.props.email}
+              value={this.props.formValues.email}
             />
           </div>
 
@@ -57,7 +46,7 @@ class BadgeForm extends React.Component {
               className="form-control"
               type="text"
               name="jobTitle"
-              value={this.props.jobTitle}
+              value={this.props.formValues.jobTitle}
             />
           </div>
 
@@ -68,11 +57,11 @@ class BadgeForm extends React.Component {
               className="form-control"
               type="text"
               name="twitter"
-              value={this.props.twitter}
+              value={this.props.formValues.twitter}
             />
           </div>
 
-          <button onClick={this.handleClick} className="btn btn-primary">
+          <button className="btn btn-primary">
             Save
           </button>
         </form>
